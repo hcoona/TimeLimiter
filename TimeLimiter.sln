@@ -1,0 +1,37 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLimiter", "TimeLimiter\TimeLimiter.csproj", "{CA33F0AE-0DEE-4AC7-AE3A-F344BC935F33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLimiterUnitTest", "TimeLimiterUnitTest\TimeLimiterUnitTest.csproj", "{AE307397-9F73-4BB1-9118-C17BD38E3DEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72B89884-3A2E-4EA9-A86D-54EFFE8C8512}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA33F0AE-0DEE-4AC7-AE3A-F344BC935F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA33F0AE-0DEE-4AC7-AE3A-F344BC935F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA33F0AE-0DEE-4AC7-AE3A-F344BC935F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA33F0AE-0DEE-4AC7-AE3A-F344BC935F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE307397-9F73-4BB1-9118-C17BD38E3DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE307397-9F73-4BB1-9118-C17BD38E3DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE307397-9F73-4BB1-9118-C17BD38E3DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE307397-9F73-4BB1-9118-C17BD38E3DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7541189A-856D-4F34-96BA-308490F13882}
+	EndGlobalSection
+EndGlobal
