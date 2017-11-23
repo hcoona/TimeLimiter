@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Title>$(MSBuildProjectName)</Title>
     <TargetFrameworks>netstandard1.0;net45</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -14,6 +15,10 @@
     <PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0-standalone.html</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/hcoona/TimeLimiter</PackageProjectUrl>
     <Version>1.0.1</Version>
+    <PackageReleaseNotes>
+      <![CDATA[
+Tested for user code throwing exception
+]]></PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
