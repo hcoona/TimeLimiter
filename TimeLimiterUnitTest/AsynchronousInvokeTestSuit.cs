@@ -59,6 +59,26 @@ namespace TimeLimiterUnitTest
         }
 
         [Fact]
+        public async Task TestInvokeActionThrowExceptionAsync()
+        {
+            var stopwatch = Stopwatch.StartNew();
+            await Assert.ThrowsAsync<ByDesignException>(() =>
+            {
+                return TL.InvokeAsync(
+                    ct =>
+                    {
+                        Task.Delay(100).GetAwaiter().GetResult();
+                        throw new ByDesignException();
+                    },
+                    CancellationToken.None,
+                    TimeSpan.FromMilliseconds(1000));
+            });
+            stopwatch.Stop();
+
+            Assert.InRange(stopwatch.ElapsedMilliseconds, 90, 120);
+        }
+
+        [Fact]
         public async Task TestInvokeFunctionAsync()
         {
             var stopwatch = Stopwatch.StartNew();
@@ -102,6 +122,26 @@ namespace TimeLimiterUnitTest
             stopwatch.Stop();
 
             Assert.InRange(stopwatch.ElapsedMilliseconds, 190, 220);
+        }
+
+        [Fact]
+        public async Task TestInvokeFuncionThrowExceptionAsync()
+        {
+            var stopwatch = Stopwatch.StartNew();
+            await Assert.ThrowsAsync<ByDesignException>(() =>
+            {
+                return TL.InvokeAsync<object>(
+                    ct =>
+                    {
+                        Task.Delay(100).GetAwaiter().GetResult();
+                        throw new ByDesignException();
+                    },
+                    CancellationToken.None,
+                    TimeSpan.FromMilliseconds(1000));
+            });
+            stopwatch.Stop();
+
+            Assert.InRange(stopwatch.ElapsedMilliseconds, 90, 120);
         }
     }
 }

@@ -48,7 +48,10 @@ namespace TimeLimiter
             {
                 if (t.IsCanceled)
                 {
-                    taskCompletionSource.TrySetCanceled();
+                    if (!taskCompletionSource.Task.IsCompleted)
+                    {
+                        taskCompletionSource.TrySetCanceled();
+                    }
                 }
                 else if (t.IsFaulted)
                 {
@@ -59,8 +62,15 @@ namespace TimeLimiter
                 }
                 else
                 {
-                    t.GetAwaiter().GetResult();
-                    taskCompletionSource.TrySetResult(null);
+                    try
+                    {
+                        t.GetAwaiter().GetResult();
+                        taskCompletionSource.TrySetResult(null);
+                    }
+                    catch (Exception ex)
+                    {
+                        taskCompletionSource.TrySetException(ex);
+                    }
                 }
             });
 
@@ -104,7 +114,14 @@ namespace TimeLimiter
                 }
                 else
                 {
-                    taskCompletionSource.TrySetResult(t.GetAwaiter().GetResult());
+                    try
+                    {
+                        taskCompletionSource.TrySetResult(t.GetAwaiter().GetResult());
+                    }
+                    catch (Exception ex)
+                    {
+                        taskCompletionSource.TrySetException(ex);
+                    }
                 }
             });
 
