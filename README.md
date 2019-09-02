@@ -2,6 +2,8 @@
 
 This is an optimized time limiter for asynchronous tasks.
 
+**Moved to https://github.com/hcoona/OneDotNet/tree/master/TimeLimiter **
+
 ## Getting Started ##
 
 You can run either sync/async action/function/task with a specified timeout limit. For performance consideration,
